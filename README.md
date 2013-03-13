@@ -1,6 +1,1 @@
-Tweaks include:
-
-Separating layout and index views
-Changing redirect type
-Adding author
-Adjusting upvote/downvote functionality
+Using Sinatra to recreate the basic functionality of Reddit (and then some)
