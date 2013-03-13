@@ -1,0 +1,27 @@
+#links-list 
+  -@links.each do |l| 
+    .row
+      .span3
+        %span.span
+          %form{:action => "#{l.id}/vote/1", :method => "post"}
+            %input{:type => "hidden", :name => "_method", :value => "put"}
+            %input{:type => "submit", :value => "⇡"}
+        %span.points
+          #{l.points}
+        %span.span
+          %form{:action => "#{l.id}/vote/-1", :method => "post"}
+            %input{:type => "hidden", :name => "_method", :value=> "put"}
+            %input{:type => "submit", :value => "⇣"}        
+      .span6
+        %span.link-title
+          %h3
+            %a{:href => (l.url)} #{l.title}
+          %span.author
+            Added by #{l.author}
+#add-link
+  %form{:action => "/", :method => "post"}
+    %input{:type => "text", :name => "title", :placeholder => "Title"}
+    %input{:type => "text", :name => "url", :placeholder => "Url"}
+    %input{:type => "text", :name => "author", :placeholder => "Author"}
+    %input{:type => "submit", :value => "Submit"} 
+   
